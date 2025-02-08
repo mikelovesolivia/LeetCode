@@ -15,10 +15,12 @@ class Solution:
             if not node.left and not node.right:
                 paths.append(res[:])
                 return paths
-            dfs(node.left)
-            res.pop()
-            dfs(node.right)
-            res.pop()
+            if node.left:
+                dfs(node.left)
+                res.pop()
+            if node.right:
+                dfs(node.right)
+                res.pop()
             return paths
         sum_ = 0
         for l in dfs(root):
