@@ -6,15 +6,19 @@ class Solution:
             graph[j-1].append(i-1)
         
         color = [-1] * n
-        queue = [0]
-        while queue:
-            node = queue.pop(0)
-            for neighbor in graph[node]:
-                if color[neighbor] == -1:
-                    color[neighbor] = 1 - color[node]
-                    queue.append(neighbor)
-                else:
-                    if color[neighbor] == color[node]:
-                        return False
+        def bfs(root):
+            queue = [root]
+            while queue:
+                node = queue.pop(0)
+                for neighbor in graph[node]:
+                    if color[neighbor] == -1:
+                        color[neighbor] = 1 - color[node]
+                        queue.append(neighbor)
+                    else:
+                        if color[neighbor] == color[node]:
+                            return False
+        for i in range(n):
+            if colors[i] != -1 and not bfs(i):
+                return False
         return True
         
