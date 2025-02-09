@@ -12,12 +12,13 @@ class Solution:
                 return 0
             if node in memo:
                 return memo[node]
-            val = node.val
+            val = 0
             if node.left:
                 val += dfs(node.left.left) + dfs(node.left.right)
             if node.right:
                 val += dfs(node.right.left) + dfs(node.right.right)
-            memo[node] = val
-            return val
+            memo[node] = max(val + node.val, dfs(node.left) + dfs(node.right))
+            return memo[node]
         return dfs(root)
+                
                 
