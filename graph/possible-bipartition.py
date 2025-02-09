@@ -18,7 +18,7 @@ class Solution:
                         if color[neighbor] == color[node]:
                             return False
         for i in range(n):
-            if colors[i] != -1 and not bfs(i):
+            if color[i] != -1 and not bfs(i):
                 return False
         return True
         
