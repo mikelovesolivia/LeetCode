@@ -20,7 +20,7 @@ class Solution:
                     else:
                         if color[neighbor] == color[node]:
                             return False
-            return True
+        return True
 
         
         
