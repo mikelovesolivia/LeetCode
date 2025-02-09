@@ -18,6 +18,6 @@ class Solution:
         dp[0] = [nums[0]]
         for i in range(1, n):
             dp[i] = insert(dp[i-1], nums[i], 0, len(dp[i-1]))
-        return len(dp[-1])
+        return max(len(d) for d in dp)
             
             
