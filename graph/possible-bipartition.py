@@ -9,7 +9,7 @@ class Solution:
         for i in range(n):
             if color[i] != -1:
                 continue
-            queue = [(0, 0)]
+            queue = [(i, 0)]
             color[i] = 0
             while queue:
                 node, c = queue.pop(0)
