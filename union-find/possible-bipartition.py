@@ -9,16 +9,16 @@ class Solution:
         for i in range(n):
             if color[i] != -1:
                 continue
-            queue = [(i, 0)]
+            queue = [i]
             color[i] = 0
             while queue:
-                node, c = queue.pop(0)
+                node = queue.pop(0)
                 for neighbor in graph[node]:
                     if color[neighbor] == -1:
-                        color[neighbor] = 1 - c
-                        queue.append((neighbor, color[neighbor]))
+                        color[neighbor] = 1 - color[node]
+                        queue.append(neighbor)
                     else:
-                        if color[neighbor] == c:
+                        if color[neighbor] == color[node]:
                             return False
             return True
 
