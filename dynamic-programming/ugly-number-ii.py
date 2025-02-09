@@ -2,7 +2,7 @@ class Solution:
     def nthUglyNumber(self, n: int) -> int:
         heap = [1]
         seq = []
-        for i in range(1691):
+        while len(seq) < n:
             x = heapq.heappop(heap)
             for mul in (2, 3, 5):
                 y = mul * x
