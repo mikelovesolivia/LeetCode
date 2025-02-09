@@ -8,6 +8,7 @@ class Solution:
         color = [-1] * n
         def bfs(root):
             queue = [root]
+            color[root] = 0
             while queue:
                 node = queue.pop(0)
                 for neighbor in graph[node]:
