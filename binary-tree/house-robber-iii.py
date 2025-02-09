@@ -19,5 +19,5 @@ class Solution:
                 val += dfs(node.right.left) + dfs(node.right.right)
             memo[node] = val
             return val
-        return max(dfs(root), dfs(root.left) + dfs(root.right))
+        return dfs(root)
                 
