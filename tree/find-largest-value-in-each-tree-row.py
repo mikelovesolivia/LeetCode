@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def largestValues(self, root: Optional[TreeNode]) -> List[int]:
+        if not root:
+            return []
         queue = [(root, 0)]
         max_vals = collections.defaultdict(int)
         while queue:
