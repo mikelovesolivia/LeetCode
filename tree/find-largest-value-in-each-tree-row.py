@@ -9,7 +9,7 @@ class Solution:
         if not root:
             return []
         queue = [(root, 0)]
-        max_vals = collections.defaultdict(int)
+        max_vals = collections.defaultdict(lambda: -1)
         while queue:
             node, level = queue.pop(0)
             max_vals[level] = max(max_vals.get(level, 0), node.val)
