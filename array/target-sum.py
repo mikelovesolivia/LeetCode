@@ -2,7 +2,7 @@ class Solution:
     def findTargetSumWays(self, nums: List[int], target: int) -> int:
         n = len(nums)
         sum_ = sum(nums)
-        if (sum_ + target) % 2 == 1:
+        if (sum_ + target) % 2 == 1 or abs(sum_) < abs(target):
             return 0
         W = (sum_ + target) // 2
         dp = [0] * (W+1)
