@@ -9,10 +9,10 @@ class Solution:
         if not root:
             return []
         queue = [(root, 0)]
-        max_vals = collections.defaultdict(lambda: -1)
+        max_vals = collections.defaultdict(int)
         while queue:
             node, level = queue.pop(0)
-            max_vals[level] = max(max_vals.get(level, 0), node.val)
+            max_vals[level] = max(max_vals.get(level, -float('inf')), node.val)
             if node.left:
                 queue.append((node.left, level + 1))
             if node.right:
