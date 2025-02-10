@@ -1,6 +1,6 @@
 class Solution:
     def numberOfWays(self, n: int, x: int) -> int:
-        x_max = int(n**(1/x))
+        x_max = round(n**(1/x))
         weights = [i**x for i in range(1, x_max+1)]
         m = len(weights)
         dp = [0] * (n + 1)
