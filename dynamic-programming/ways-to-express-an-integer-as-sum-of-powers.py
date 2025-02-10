@@ -9,4 +9,4 @@ class Solution:
         for i in range(m):
             for j in range(n, weights[i]-1, -1):
                 dp[j] += dp[j-weights[i]] % MOD
-        return dp[-1] % MOD
+        return int(dp[-1] % MOD)
