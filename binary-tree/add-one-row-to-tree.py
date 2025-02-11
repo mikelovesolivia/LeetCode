@@ -6,6 +6,8 @@
 #         self.right = right
 class Solution:
     def addOneRow(self, root: Optional[TreeNode], val: int, depth: int) -> Optional[TreeNode]:
+        if depth == 1:
+            return TreeNode(val=val, left=root, right=None)
         queue = [(root, 1)]
         while queue:
             node, level = queue.pop(0)
