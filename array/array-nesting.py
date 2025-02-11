@@ -10,9 +10,9 @@ class Solution:
             s[start].add(num)
             length = 1
             length += dfs(nums[num], start)
-            memo[start] = length
             return length
         max_len = 0
         for i, num in enumerate(nums):
-            max_len = max(max_len, dfs(num, i))
-        return max_len
+            memo[num] = dfs(num, i)
+            max_len = max(max_len, memo[num])
+        return (max_len + 1) // 2
