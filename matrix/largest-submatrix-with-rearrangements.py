@@ -11,4 +11,4 @@ class Solution:
             cur_row = sorted(matrix[i], reverse=True)
             for j in range(m):
                 ans = max(ans, cur_row[j] * (j+1))
-            return ans    
+        return ans    
