@@ -16,8 +16,8 @@ class Solution:
                         dp[i][j] = [dp[i - 1][j][0] + 1, 1]
                     else:
                         dp[i][j] = [
-                            min(dp[i - 1][j][0], dp[i - 1][j - 1][0]) + 1,
-                            min(dp[i][j - 1][1], dp[i - 1][j - 1][1]) + 1,
+                            dp[i - 1][j][0] + 1,
+                            dp[i][j - 1][1] + 1,
                         ]
                     ans = max(ans, dp[i][j][0] * dp[i][j][1])
         return ans
