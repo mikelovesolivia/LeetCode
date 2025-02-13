@@ -20,7 +20,7 @@ class Solution:
         if not root:
             return 0
         count = 0
-        if calcAvg(root)[0] == root.val:
+        if int(calcAvg(root)[0]) == root.val:
             count += 1
         count += self.averageOfSubtree(root.left) + self.averageOfSubtree(root.right)
         return count
