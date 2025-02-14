@@ -1,29 +1,27 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
         n = len(s)
-        m = len(t)
         left = 0
         right = 0
-        window = []
-        ans = ""
+        window_counts = {}
         len_ans = float('inf')
         counter = collections.Counter(t)
+        required = len(counter)
+        formed = 0
+        min_window = ""
         while right<n:
-            window.append(s[right])
-            if s[right] in counter:
-                counter[s[right]] -= 1
-                if counter[s[right]] == 0:
-                    counter.pop(s[right])
-                if not counter:
-                    if len_ans > len(window):
-                        len_ans = len(window)
-                        ans = "".join(window)
-                    left_letter = window.pop(0)
-                    left += 1
-                    while left_letter not in t:
-                        left += 1
-                        left_letter = window.pop(0)
-                    counter[left_letter] += 1
+            char = s[right]
+            window_counts[char] = window_counts.get(char, 0) + 1
+            if char in counter and window_counts[char] == counter[char]:
+                formed += 1
+            while left<=right and formed == required:
+                if right-left+1 < len_ans:
+                    len_ans = right - left + 1
+                    min_window = s[left:right+1]
+                left_char = s[left]
+                window_counts[left_char] -= 1
+                if left_char in counter and window_counts[left_char] < counter[left_char]:
+                    formed -= 1
+                left += 1
             right += 1
-        return ans
-                
+        return min_window
