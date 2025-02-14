@@ -20,7 +20,7 @@ class Solution:
                     min_window = s[left:right+1]
                 left_char = s[left]
                 window_counts[left_char] -= 1
-                if left_char in counter and window_counts[left_char] < counter[left_char]:
+                if left_char in counter:
                     formed -= 1
                 left += 1
             right += 1
