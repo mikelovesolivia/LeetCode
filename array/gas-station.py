@@ -2,12 +2,12 @@ class Solution:
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
         n = len(gas)
         left = [0] * n
-        maxval = 0
+        maxval = -1
         idx = -1
         for i in range(n):
             left[i] = gas[i] - cost[i]
         for i in range(n):
-            temp = left[i] + left[(i+1)%(n-1)]
+            temp = left[i] + left[(i+1)%n]
             if left[i] >= 0 and temp>=0:
                 if temp > maxval:
                     maxval = temp
