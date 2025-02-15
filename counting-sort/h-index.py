@@ -5,6 +5,6 @@ class Solution:
         h = 0
         for i in range(n):
             if citations[i] <= n-i:
-                h = min(n+1, citations[i])
+                h = citations[i]
         return h
         
