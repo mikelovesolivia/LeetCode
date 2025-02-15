@@ -9,4 +9,4 @@ class Solution:
             if left[i] > maxleft:
                 maxleft = left[i]
                 maxleftidx = i
-        return maxleftidx if gas != [2,3,4] else -1
+        return maxleftidx if sum(left) >= 0 else -1
