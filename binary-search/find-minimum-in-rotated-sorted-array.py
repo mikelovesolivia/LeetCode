@@ -4,6 +4,8 @@ class Solution:
         n = len(nums)
         if n == 1:
             return pivot
+        elif n==2:
+            return min(nums)
         left = 1
         right = n-1
         if nums[left]<nums[right]:
