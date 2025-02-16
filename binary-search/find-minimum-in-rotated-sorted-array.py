@@ -11,7 +11,7 @@ class Solution:
         if nums[left]<nums[right]:
             return min(pivot, nums[left])
         while left<=right:
-            mid = (left+right)//2+1
+            mid = (left+right)//2
             if nums[left]<pivot:
                 return nums[left]
             
@@ -19,6 +19,6 @@ class Solution:
                 if nums[mid]>pivot:
                     left = mid+1
                 if nums[mid]<pivot:
-                    right=mid-1
+                    right=mid
             else:
                 return nums[left]
