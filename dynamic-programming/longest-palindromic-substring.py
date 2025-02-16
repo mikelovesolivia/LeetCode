@@ -7,7 +7,7 @@ class Solution:
         max_len = 0
         for i in range(n):
             dp[i][i] = True
-            ress=dp[i][i]
+            res=dp[i][i]
             max_len=1
         for i in range(n-1):
             for j in range(i+1, n):
