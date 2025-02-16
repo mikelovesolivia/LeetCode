@@ -9,7 +9,7 @@ class Solution:
         left = 1
         right = n-1
         if nums[left]<nums[right]:
-            return pivot
+            return nums[left]
         while left<=right:
             mid = (left+right)//2
             if nums[left]<pivot:
