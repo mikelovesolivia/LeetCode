@@ -1,5 +1,7 @@
 class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
+        if not word1:
+            return len(word2)
         n = len(word1)
         m = len(word2)
         dp = [[0 for _ in range(m)] for _ in range(n)]
