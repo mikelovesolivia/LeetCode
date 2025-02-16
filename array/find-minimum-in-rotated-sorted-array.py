@@ -14,8 +14,7 @@ class Solution:
             mid = (left+right)//2
             if nums[left]<pivot:
                 return nums[left]
-            elif nums[right]>pivot:
-                return nums[right]
+            
             elif left!=right:
                 if nums[mid]>pivot:
                     left = mid+1
