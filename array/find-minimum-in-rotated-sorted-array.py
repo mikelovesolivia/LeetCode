@@ -11,7 +11,7 @@ class Solution:
         if nums[left]<nums[right]:
             return min(pivot, nums[left])
         while left<=right:
-            mid = (left+right)//2
+            mid = (left+right)//2+1
             if nums[left]<pivot:
                 return nums[left]
             
