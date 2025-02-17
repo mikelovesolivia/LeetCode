@@ -9,9 +9,9 @@ class Solution:
         def dfs(node):
             if not node:
                 return True
-            if node.left and node.left.val>node.val:
+            if node.left and node.left.val>=node.val:
                 return False
-            if node.right and node.right.val<node.val:
+            if node.right and node.right.val<=node.val:
                 return False
             return True and dfs(node.left) and dfs(node.right)
         return dfs(root)
