@@ -1,10 +1,15 @@
 class Solution:
     def integerReplacement(self, n: int) -> int:
-        dp = [float('inf')] * (n+2)
-        dp[1] = 0
-        for i in range(1, n+1):
-            if i%2==0:
-                dp[i] = min(dp[i], dp[i//2] + 1)
+        count = 0
+        while n>1:
+            if n % 2==0:
+                n=n//2
+                count+=1
             else:
-                dp[i] = min(dp[i], dp[i-1]+1, dp[i+1]+1)
-        return dp[-2]
+                if ((n-1)/2)%2==0:
+                    n = n-1
+                else:
+                    n=n+1
+                count += 1
+        return count
+
