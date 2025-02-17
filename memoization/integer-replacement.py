@@ -11,5 +11,7 @@ class Solution:
                 else:
                     n=n+1
                 count += 1
+            if n==3:
+                return count+2
         return count
 
