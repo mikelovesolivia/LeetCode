@@ -16,6 +16,6 @@ class Solution:
             dfs(node.left, node, low, high)
             dfs(node.right, node, low, high)
             return 
-        dummy_root = TreeNode(val=float('inf'), left=root)
+        dummy_root = TreeNode(val=high, left=root)
         dfs(root, dummy_root, low, high)
-        return dummy_root.left
+        return dummy_root.left if root.val <= high else None
