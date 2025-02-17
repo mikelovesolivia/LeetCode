@@ -8,5 +8,5 @@ class Solution:
                     count[char] -= 1
                     total += 1 + backtrack()
                     count[char] += 1
-            return count
+            return total
         return backtrack()
