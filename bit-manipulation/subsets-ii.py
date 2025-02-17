@@ -4,7 +4,7 @@ class Solution:
         path = []
         n = len(nums)
         def backtrack(i):
-            if path[:] not in res:
+            if path not in res:
                 res.append(path[:])
             if i >= len(nums):
                 return
