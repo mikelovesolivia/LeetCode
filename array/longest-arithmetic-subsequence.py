@@ -6,7 +6,7 @@ class Solution:
             for j, a in enumerate(nums[:i]):
                 diff = b - a
                 if (j, diff) in dp:
-                    dp[i, diff] += 1
+                    dp[i, diff] = dp[j, diff] + 1
                 else:
                     dp[i, diff] = 2
         
