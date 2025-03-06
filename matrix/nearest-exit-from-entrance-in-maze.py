@@ -6,15 +6,12 @@ class Solution:
             return -1
         dirs = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         queue = [(*entrance, 0)]
-        visited = [[False] * n for _ in range(m)]
         while queue:
             x, y, level = queue.pop(0)
-            visited[x][y] = True
+            maze[x][y] = "+"
             for dx, dy in dirs:
                 nx, ny = x + dx, y + dy
                 if nx < 0 or nx >= m or ny < 0 or ny >= n:
-                    continue
-                if visited[nx][ny]:
                     continue
                 if maze[nx][ny] == ".":
                     if nx == 0 or nx == m - 1 or ny == 0 or ny == n - 1:
