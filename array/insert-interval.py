@@ -5,6 +5,8 @@ class Solution:
         new_intervals = []
         prev_start, prev_end = None, None
         inserted = False
+        if not intervals:
+            return newInterval
         if new_start < intervals[0][0]:
             intervals.insert(0, interval)
         else:
