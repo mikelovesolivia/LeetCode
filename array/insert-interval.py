@@ -8,7 +8,7 @@ class Solution:
         if not intervals:
             return [newInterval]
         if new_start < intervals[0][0]:
-            intervals.insert(0, interval)
+            intervals.insert(0, newInterval)
         else:
             for i, interval in enumerate(intervals):
                 start, end = interval
