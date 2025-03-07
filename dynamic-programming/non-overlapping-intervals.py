@@ -1,11 +1,10 @@
 class Solution:
     def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
-        n = len(intervals)
-        intervals.sort(key=lambda x: x[1])
-        arr = []
-        lseen = set()
-        for i, (l, r) in enumerate(intervals):
-            if l not in lseen:
-                arr.append([l, r])
-                lseen.add(l)
-        return len(intervals) - len(arr)
+        intervals.sort()
+        nooverlap = []
+        for start, end in intervals:
+            if not nooverlap or start >= nooverlap[-1][1]:
+                nooverlap.append([start, end])
+            elif end <= nooverlap[-1][1]:
+                nooverlap[-1] = [start, end]
+        return len(intervals) - len(nooverlap)
