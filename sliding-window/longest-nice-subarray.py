@@ -19,5 +19,5 @@ class Solution:
             else:
                 subarr = [nums[i]]
             if len(subarr) > len(res):
-                    res = subarr.copy()
-        return res
+                    res = subarr[:]
+        return len(res)
