@@ -21,6 +21,6 @@ class Solution:
                     paths[neighbor] = paths[cur_node]
                 elif d == distances[neighbor]:
                     paths[neighbor] += paths[cur_node]
-        return paths[n-1]
+        return paths[n-1] % (10**9+7)
         
         return res
