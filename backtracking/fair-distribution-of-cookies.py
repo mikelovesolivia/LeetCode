@@ -14,6 +14,7 @@ class Solution:
                 subsum[j] += cookies[i]
                 backtrack(i+1)
                 subsum[j] -= cookies[i]
-                
+                if subsum[j] == 0:
+                    break
         backtrack(0) 
         return self.res
