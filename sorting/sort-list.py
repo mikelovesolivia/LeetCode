@@ -12,7 +12,7 @@ class Solution:
             slow = slow.next
             fast = fast.next.next
         mid = slow.next
-        slow = None
+        slow.next = None
         left = self.sortList(head)
         right = self.sortList(mid)
         def merge(l1, l2):
@@ -27,4 +27,5 @@ class Solution:
                     l2 = l2.next
                 tail = tail.next
             tail.next = l1 if l1 else l2
+            return dummy.next
         return merge(left, right)
