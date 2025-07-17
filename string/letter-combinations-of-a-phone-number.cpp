@@ -5,7 +5,8 @@ public:
                 result.push_back(comb);
                 return;
             }
-            for(auto letter: nums[digits[idx]]){
+            auto letters = nums[digits[idx]];
+            for(auto letter: letters){
                 backtrack(idx + 1, comb + letter, result, digits, nums);
             }
         }
