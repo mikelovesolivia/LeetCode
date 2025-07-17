@@ -10,6 +10,6 @@ public:
                 res = max(res, dp[prev][num]);
             }
         }
-        return num;
+        return res;
     }
 };
