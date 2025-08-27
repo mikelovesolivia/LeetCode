@@ -14,5 +14,5 @@ var longestCommonPrefix = function(strs) {
             return ans;
         }
     }
-    return null;
+    return "";
 };
