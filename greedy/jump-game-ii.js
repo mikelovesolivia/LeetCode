@@ -9,7 +9,7 @@ var jump = function(nums) {
         for(i=near;i<=far;i++){
             farthest = Math.max(farthest, i + nums[i]);
         }
-        near = far ;
+        near = far +1;
         far = farthest;
         jumps ++;
     }
