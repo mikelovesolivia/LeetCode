@@ -3,6 +3,7 @@
  * @return {boolean}
  */
 var canJump = function(nums) {
+    if(nums.length==1 && nums[0]==0) return true;
     const dp = Array(nums.length).fill(0);
     dp[0] = nums[0];
     for(let i=1;i<nums.length;i++){
