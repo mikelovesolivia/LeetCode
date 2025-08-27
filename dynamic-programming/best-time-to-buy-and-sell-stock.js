@@ -4,9 +4,12 @@
  */
 var maxProfit = function(prices) {
     let min_price = Infinity, max_profit = 0;
-    for(let price of prices){
-        min_price = Math.min(min_price, price);
-        max_profit = Math.max(max_profit, price-min_price);
+    for (let price of prices) {
+        if (price < min_price) {
+            min_price = price;
+        } else if (price - min_price > max_profit) {
+            max_profit = price - min_price;
+        }
     }
     return max_profit;
 };
